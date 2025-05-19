@@ -13,7 +13,6 @@ function Header() {
               fill="none"
               aria-labelledby="wordmark-medium-desc"
               viewBox="0 0 719 160"
-              class="au av aw"
             >
               <desc id="wordmark-medium-desc">Medium Logo</desc>
               <path

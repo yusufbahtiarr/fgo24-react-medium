@@ -24,7 +24,7 @@ function DetailArticlePage() {
       <Header />
       <div className="w-full h-fit p-20 flex justify-center mb-100">
         {data
-          .filter((item) => item.slug === slug)
+          .filter((item) => item.slug.toLowerCase().includes(slug))
           .map((item, index) => {
             return (
               <div
@@ -33,7 +33,7 @@ function DetailArticlePage() {
               >
                 <div className="text-3xl text-left font-bold">{item.title}</div>
                 <div className="font-light text-gray-700 text-[14px]">
-                  Created by: <span>{item.username}</span>
+                  Created by: <span>{username}</span>
                 </div>
                 <div>
                   <img
