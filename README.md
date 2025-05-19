@@ -6,6 +6,8 @@ This repository contains React project Minitask with React useParam, useState, u
 
 ![Preview](Screenshot.png)
 
+![Preview](Screenshot2.png)
+
 ![Preview](Screenshot1.png)
 
 ## How to Run this project
@@ -13,13 +15,13 @@ This repository contains React project Minitask with React useParam, useState, u
 1. Clone this project
 
 ```
-git clone https://github.com/yusufbahtiarr/fgo24-react-madium.git
+git clone https://github.com/yusufbahtiarr/fgo24-react-medium.git
 ```
 
 2. Enter the project directory
 
 ```
-cd fgo24-react-madium
+cd fgo24-react-medium
 ```
 
 3. Install the Depedencies
