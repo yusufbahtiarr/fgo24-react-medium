@@ -1,6 +1,17 @@
+import { useForm } from "react-hook-form";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 function Header() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { register, handleSubmit } = useForm();
+  let navigate = useNavigate();
+  // let res = searchParams.get("search");
+  function searchData(value) {
+    navigate("/");
+    setSearchParams(value);
+  }
   return (
-    <header className="fixed top-0 left-0 px-20 right-0 h-[80px] bg-white border-b-1 border-gray-200 flex flex-row justify-between">
+    <header className="fixed top-0 left-0 px-20 right-0 h-[80px] bg-white border-b border-gray-200 flex justify-between z-10">
       <div className="flex items-center p-3 gap-3">
         <div>
           <span className="text-3xl font-semibold size-[24px]">
@@ -20,18 +31,21 @@ function Header() {
             </svg>
           </span>
         </div>
-        <div>
+        <form onSubmit={handleSubmit(searchData)}>
           <input
+            {...register("search")}
+            autoFocus={!!searchParams.get("search")}
+            defaultValue={searchParams.get("search") || ""}
             type="text"
-            name="search"
             id="search"
             placeholder="Search"
             className="text-gray-800 py-2 px-5 rounded-full outline-0 bg-gray-100"
           />
-        </div>
+        </form>
       </div>
-      <div className="flex items-center justify-end gap-3 text-gray-800 text-[14px] pr-3">
-        <button className="rounded-full px-3 py-1 h-fit border">Write</button>
+
+      <div className="flex items-center justify-end gap-3 text-gray-800 text-sm pr-3">
+        <button className="rounded-full px-3 py-1 border">Write</button>
         <button className="rounded-full px-3 py-1 bg-green-500 text-white">
           Sign up
         </button>
