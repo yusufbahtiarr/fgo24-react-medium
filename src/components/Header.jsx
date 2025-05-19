@@ -1,5 +1,3 @@
-import React from "react";
-
 function Header() {
   return (
     <header className="fixed top-0 left-0 px-20 right-0 h-[80px] bg-white border-b-1 border-gray-200 flex flex-row justify-between">

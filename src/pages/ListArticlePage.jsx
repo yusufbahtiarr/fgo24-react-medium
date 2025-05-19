@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import truncate from "lodash/truncate";
 import { Link, useSearchParams } from "react-router-dom";
 import axios from "axios";
@@ -32,7 +30,7 @@ function ListArticlePage() {
   }
 
   return (
-    <div className="box-border min-w-screen min-h-screen">
+    <div className="box-border w-screen h-screen overflow-x-hidden">
       <header className="fixed top-0 left-0 px-20 right-0 h-[80px] bg-white border-b border-gray-200 flex justify-between z-10">
         <div className="flex items-center p-3 gap-3">
           <div>
@@ -56,11 +54,11 @@ function ListArticlePage() {
           <form onSubmit={handleSubmit(searchData)}>
             <input
               {...register("search")}
+              autoFocus={!!searchParams.get("search")}
               defaultValue={searchParams.get("search") || ""}
               type="text"
               id="search"
               placeholder="Search"
-              autoFocus
               className="text-gray-800 py-2 px-5 rounded-full outline-0 bg-gray-100"
             />
           </form>
@@ -76,36 +74,60 @@ function ListArticlePage() {
       </header>
 
       <main className="w-full h-fit p-20 flex justify-center">
-        <div className="flex flex-col max-w-2xl items-start text-left gap-4 pt-5 mb-20">
+        <div className="flex flex-col max-w-3xl items-start text-left gap-4 pt-5 mb-20">
+          <div className="text-xl mx-auto">
+            {searchParams.get("search") && (
+              <div className="mb-6 text-gray-600">
+                Hasil pencarian untuk "{searchParams.get("search")}" (
+                <span className="font-medium">{data.length}</span> hasil
+                ditemukan)
+              </div>
+            )}
+          </div>
           {data.map((post) => (
             <div
               key={post.slug}
-              className="border border-gray-300 rounded-2xl shadow-lg p-6 flex flex-col gap-4"
+              className="border border-gray-300 rounded-2xl shadow-lg p-6 flex flex-row gap-6"
             >
-              <div className="text-3xl font-bold">
-                <Link to={`/article/@${post.username}/${post.slug}`}>
-                  {post.title}
-                </Link>
+              <div className="flex flex-col flex-1 min-h-[150px]">
+                <div className="text-2xl font-bold">
+                  <Link to={`/article/@${post.username}/${post.slug}`}>
+                    {post.title}
+                  </Link>
+                </div>
+                <div className="mt-2 flex-1">
+                  <p className="text-justify">
+                    {truncate(post.body, {
+                      length: 300,
+                      separator: /[\s]+/,
+                    })}
+                  </p>
+                </div>
               </div>
-              <div className="mt-2">
-                <p className="text-justify">
-                  {truncate(post.body, {
-                    length: 300,
-                    separator: /[\s]+/,
-                  })}
-                </p>
+
+              <div className="max-w-[200px] h-full self-stretch">
+                <Link
+                  to={`/article/@${post.username}/${post.slug}`}
+                  className="block h-full"
+                >
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover rounded-lg max-h-[150px] md:max-h-[200px]" // Batasi tinggi maksimum
+                  />
+                </Link>
               </div>
             </div>
           ))}
           {data.length < 1 && (
-            <div className="font-semibold text-2xl mt-10 h-full">
-              Tidak ada artikel.
+            <div className="font-semibold flex items-center text-2xl mt-10 h-full w-full">
+              <span className="text-center mx-auto font-semibold text-gray-700">
+                Tidak ada artikel.
+              </span>
             </div>
           )}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
