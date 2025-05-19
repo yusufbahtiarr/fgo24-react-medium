@@ -15,7 +15,7 @@ function DetailArticlePage() {
         setData(response.data);
       })
       .catch((err) => {
-        setError(err.message);
+        throw new Error(err.message);
       });
   }, []);
 
