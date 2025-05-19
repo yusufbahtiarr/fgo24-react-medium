@@ -1,0 +1,23 @@
+[
+  {
+    "username": "Rian",
+    "slug": "promise-async-await",
+    "title": "Promise Async Await, dan Ketika Dia Bertemu Looping Control Flow",
+    "body": "Setiap developer JavaScript pasti akan berkenalan dengan yang namanya fitur JavaScript yang bernama Promise, Callback, dan Async Await. Ketiga fitur tersebut selalu dipakai ketika JavaScript perlu menjalankan eksekusi kode secara “asinkronus” ke dalam “event loop” dari proses utama JavaScript itu sendiri. Sistem Promise dan Callback ini membuat proses eksekusi di dalam “single thread” dari event loop JavaScript V8 engine tidak terjadi proses blocking. Dengan demikian, proses antrian eksekusi yang banyak, tidak menyebabkan sistem menjadi macet (not responding) di JavaScript engine tersebut. Contoh Promise yang sering kita temui adalah proses Fetch Http Request via network (istilah lain dari AJAX), proses baca tulis data, dan proses lain yang dibungkus oleh Promise dan Callback. Bahasan lebih detail tentang Promise, Callback, dan Async Await banyak sekali ditemui di internet, salah satunya pada tautan berikut ini.",
+    "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*EtkNzpL8g7X6Zkj3cFEN7g.jpeg"
+  },
+  {
+    "username": "Rian",
+    "slug": "fitur-fitur-kunci-di-ecmascrip-2024",
+    "title": "Fitur-Fitur Kunci di ECMAScript 2024",
+    "body": "JavaScript memegang peran sentral sebagai bahasa pemrograman utama untuk pengembangan frontend maupun backend. Salah satu alasan utama di balik ketahanan dan popularitas JavaScript adalah evolusinya yang berkelanjutan, didorong oleh proses standardisasi yang cermat. Standar yang mendasari JavaScript dikenal sebagai ECMAScript (disingkat ES). Setiap tahun, komite teknis TC39, yang beranggotakan perwakilan dari berbagai perusahaan teknologi, bekerja untuk mengevaluasi proposal fitur-fitur baru dan menyempurnakan bahasa. Proses ini terdiri dari beberapa tahapan, mulai dari ide awal (Tahap 0) hingga persetujuan akhir dan inklusi dalam standar (Tahap 4). Rilis tahunan standar ECMAScript, seperti ES2023, ES2024, dan seterusnya, membawa serangkaian fitur baru yang memperkaya bahasa dan menawarkan cara-cara yang lebih efisien serta ekspresif bagi developer untuk menulis kode.ECMAScript 2024 mewakili langkah penting dalam evolusi ini. Standar yang dirilis pada pertengahan tahun 2024 ini membawa sejumlah fitur signifikan yang telah melewati proses evaluasi ketat dan siap untuk diimplementasikan serta digunakan dalam lingkungan produksi. Fitur-fitur ini dirancang untuk mengatasi tantangan umum dalam pengembangan modern, meningkatkan kejelasan kode, menyederhanakan tugas-tugas yang sebelumnya memerlukan boilerplate, dan bahkan memperkenalkan kapabilitas baru yang kuat.",
+    "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*mNKYKS9B-w-NwqPQz3q08A.png"
+  },
+  {
+    "username": "Rian",
+    "slug": "menyelami-dunia-http-request",
+    "title": "Menyelami Dunia HTTP Request dalam JavaScript Menggunakan Axios",
+    "body": "Setiap developer JavaScript pasti akan berkenalan dengan yang namanya fitur JavaScript yang bernama Promise, Callback, dan Async Await. Ketiga fitur tersebut selalu dipakai ketika JavaScript perlu menjalankan eksekusi kode secara “asinkronus” ke dalam “event loop” dari proses utama JavaScript itu sendiri. Sistem Promise dan Callback ini membuat proses eksekusi di dalam “single thread” dari event loop JavaScript V8 engine tidak terjadi proses blocking. Dengan demikian, proses antrian eksekusi yang banyak, tidak menyebabkan sistem menjadi macet (not responding) di JavaScript engine tersebut. Contoh Promise yang sering kita temui adalah proses Fetch Http Request via network (istilah lain dari AJAX), proses baca tulis data, dan proses lain yang dibungkus oleh Promise dan Callback. Bahasan lebih detail tentang Promise, Callback, dan Async Await banyak sekali ditemui di internet, salah satunya pada tautan berikut ini.",
+    "image": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*w2RF69dD9xGfE7q0KhKqpw.png"
+  }
+]
